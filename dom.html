@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+<!------------------------------------- 
+  ///////////// Header \\\\\\\\\\\\\\\ 
+ -------------------------------------->    
+    <header>
+        <h1>Console Panel Result</h1>
+
+        <h2>Blog-List</h2>
+
+        <ul id="blog-list">
+            <li>My Blog-1</li>
+            <li>My Blog-2</li>
+        </ul>
+
+    </header>
+    <br>
+    <br>
+<!------------------------------------- 
+  /////////////// Main \\\\\\\\\\\\\\\ 
+ -------------------------------------->
+    <main>
+        <section>
+
+            <article id="border">
+                <h3 class="other-title">My Blog 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est hic ratione ab velit consectetur? Sequi quasi, alias distinctio vitae voluptatibus maxime similique corporis porro, dolore dicta saepe fugit. Magni blanditiis nihil quidem eligendi aliquam facilis ducimus temporibus vitae corporis, nam tempora iste sed consectetur possimus natus harum. Harum nisi expedita, debitis perspiciatis nemo quod cum ratione reiciendis quia non doloremque tempore, in laborum vel architecto. Doloribus, blanditiis? Doloremque inventore nulla aperiam ea omnis quidem velit quasi rerum vel possimus non fugiat tempora nihil pariatur adipisci culpa, sit animi eligendi consequuntur. Est nobis similique dolore quidem eius culpa optio vel.</p>
+            </article>
+
+            <article id="border">
+                <h3 id="second-title">My Blog 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est hic ratione ab velit consectetur? Sequi quasi, alias distinctio vitae voluptatibus maxime similique corporis porro, dolore dicta saepe fugit. Magni blanditiis nihil quidem eligendi aliquam facilis ducimus temporibus vitae corporis, nam tempora iste sed consectetur possimus natus harum. Harum nisi expedita, debitis perspiciatis nemo quod cum ratione reiciendis quia non doloremque tempore, in laborum vel architecto. Doloribus, blanditiis? Doloremque inventore nulla aperiam ea omnis quidem velit quasi rerum vel possimus non fugiat tempora nihil pariatur adipisci culpa, sit animi eligendi consequuntur. Est nobis similique dolore quidem eius culpa optio vel.</p>
+            </article>
+
+            <article id="border">
+                <h3 class="other-title">My Blog 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est hic ratione ab velit consectetur? Sequi quasi, alias distinctio vitae voluptatibus maxime similique corporis porro, dolore dicta saepe fugit. Magni blanditiis nihil quidem eligendi aliquam facilis ducimus temporibus vitae corporis, nam tempora iste sed consectetur possimus natus harum. Harum nisi expedita, debitis perspiciatis nemo quod cum ratione reiciendis quia non doloremque tempore, in laborum vel architecto. Doloribus, blanditiis? Doloremque inventore nulla aperiam ea omnis quidem velit quasi rerum vel possimus non fugiat tempora nihil pariatur adipisci culpa, sit animi eligendi consequuntur. Est nobis similique dolore quidem eius culpa optio vel.</p>
+            </article>
+
+        </section>
+    </main>
+
+<!------------------------------------- 
+  /////////////// JS \\\\\\\\\\\\\\\\\
+ -------------------------------------->    
+
+    <script>
+
+        // console.log(document);
+
+        // getElementsByTagName
+
+        /*
+        const blogTitles = document.getElementsByTagName('h3');
+        for(const h3 of blogTitles)
+        {
+            console.log(h3.innerText);
+        }
+        
+        const blogDetails = document.getElementsByTagName('p');
+        for(const p of blogDetails)
+        {
+            console.log(p);
+        }
+
+        */
+
+        // getElementById
+
+        
+        const paragraphTitle = document.getElementById('second-title');
+        
+        paragraphTitle.style.textAlign='center';
+        paragraphTitle.style.borderRadius='5px';
+        paragraphTitle.style.height='40px';
+        paragraphTitle.style.width='300px';
+        paragraphTitle.style.color='black';
+        paragraphTitle.style.textShadow='2px 2px white';
+        paragraphTitle.style.backgroundColor='yellow';
+        paragraphTitle.innerText='My Blog 2 - Updated By JS';
+
+        // console.log(paragraphTitle);
+
+       
+
+        const otherTitles = document.getElementsByClassName('other-title');
+        for(const titles of otherTitles)
+        {
+        titles.style.textAlign='left';
+        titles.style.borderRadius='5px';
+        titles.style.height='40px';
+        titles.style.width='300px';
+        titles.style.color='white';
+        titles.style.textShadow='2px 2px black';
+        titles.style.backgroundColor='#ff5050';
+        }
+        // console.log(titles);
+
+        const paragraph = document.querySelectorAll('#border p');
+        
+        for(const p of paragraph)
+        {
+        p.style.border='1px solid #ff5050';
+        p.style.borderRadius='5px';
+        
+        }
+
+        paragraphTitle.setAttribute('title', 'Edited By JS');
+        paragraphTitle.getAttribute('id');
+
+        const blogs = document.getElementById('border');
+        blogs.children;
+        blogs.childNodes;
+        
+        // Create and add an element
+
+        const list = document.createElement('li');
+        list.innerText='My Blog-3';
+
+        // Now where to add
+        const unoderedList = document.getElementById('blog-list');
+
+        // Append new elemnt
+        unoderedList.appendChild(list);
+
+        
+    </script>
+    
+</body>
+</html>
